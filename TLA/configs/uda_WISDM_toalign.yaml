@@ -1,0 +1,34 @@
+TRAINER: 'ToAlign'
+
+TASK:
+  NAME: 'UDA'
+
+MODEL:
+  PRETRAIN: True
+  BASENET: 'resnet50'
+  DNET: 'Discriminator'
+  D_INDIM: 1024
+  D_OUTDIM: 1
+
+DATASET:
+  NAME: 'WISDM'
+  ROOT: 'data/WISDM'
+
+METHOD:
+  W_ALG: 1.0
+  W_CONTRA: 0.5
+  ENT: True
+  TOALIGN: True
+  CONTRA: True
+  MULTI_TASK: True
+  TIMEMAP: True
+
+TRAIN:
+  BATCH_SIZE_SOURCE: 12
+  BATCH_SIZE_TARGET: 12
+  LR: 0.001
+  TTL_ITE: 1300
+  TEST_FREQ: 20
+  PRINT_FREQ: 80
+  SAVE_FREQ: 40
+  OUTPUT_ROOT: ''
